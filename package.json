@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.56.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "mysql": "^2.18.1"
+  }
+}
