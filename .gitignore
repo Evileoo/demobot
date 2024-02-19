@@ -1,2 +1,5 @@
-# Node
+# Node dependencies
 /node_modules
+
+# Fichier de config discord
+config.json

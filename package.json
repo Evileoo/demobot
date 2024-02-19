@@ -1,11 +1,21 @@
 {
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.0.1",
-    "@typescript-eslint/parser": "^7.0.1",
-    "eslint": "^8.56.0"
-  },
   "dependencies": {
     "discord.js": "^14.14.1",
     "mysql": "^2.18.1"
-  }
+  },
+  "devDependencies": {
+    "@vic1707/eslint-config": "^5.1.1",
+    "@vic1707/prettier": "^2.0.1",
+    "@vic1707/tsconfig": "^5.0.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx,scss,css,json,yml}\" -c",
+    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,scss,css,json,yml}\""
+  },
+  "prettier": "@vic1707/prettier"
 }
