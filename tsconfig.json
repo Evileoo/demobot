@@ -1,4 +1,0 @@
-{
-    "extends": "@vic1707/tsconfig/base.json", // or any other config file
-    "include": ["src", ".eslintrc.js"] // required for eslint
-}
