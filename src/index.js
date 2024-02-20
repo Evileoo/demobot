@@ -3,7 +3,7 @@ const { Client, GatewayIntentBits, Collection, Partials } = require("discord.js"
 const { token } = require("../config.json");
 const fs = require("node:fs");
 const path = require("node:path");
-//require("./database/db.connection");
+require("./database/db.connection");
 
 //create a client instance
 const client = new Client({
@@ -31,8 +31,6 @@ for (const file of commandFiles) {
 	const command = require(filePath);
 	client.commands.set(command.data.name, command);
 }
-
-// Construct and prepare an instance of the REST module
 
 //Setup handhelded events
 const eventsPath = path.join(__dirname, 'events');
