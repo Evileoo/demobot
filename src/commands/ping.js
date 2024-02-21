@@ -5,6 +5,16 @@ module.exports = {
 		.setName("ping")
 		.setDescription("Replies with the bot's ping!"),
 	async execute(interaction) {
-		await interaction.reply(`🏓Latency is ${Date.now() - interaction.createdTimestamp} ms.`);
+
+		const sent = await interaction.reply({ 
+			content: "Pinging...",
+			fetchReply: true, 
+			ephemeral: true 
+		});
+
+		await interaction.editReply({
+			content: `🏓\nRoundtrip latency: ${sent.createdTimestamp - interaction.createdTimestamp}ms\nWebsocket heartbeat: ${interaction.client.ws.ping}ms`,
+			ephemeral: true
+		});
 	},
 };
