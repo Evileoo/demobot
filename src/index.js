@@ -32,6 +32,18 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
+//Create the collection of context menus
+client.ctxmenu = new Collection();
+const ctxmenuPath = path.join(__dirname, "contextmenu");
+const ctxmenuFiles = fs.readdirSync(ctxmenuPath).filter(file => file.endsWith('.js'));
+
+for (const file of ctxmenuFiles) {
+	const filePath = path.join(ctxmenuPath, file);
+	const ctxmenu = require(filePath);
+
+	client.ctxmenu.set(ctxmenu.data.name, ctxmenu);
+}
+
 //Setup handhelded events
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));

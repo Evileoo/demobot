@@ -1,26 +1,25 @@
-const mysql = require("mysql2");
+const Db = require("mysql2-async").default;
 
 //Pool creation
-const pool = mysql.createPool({
+const db = new Db({
     host           : "localhost",
     user           : "root",
     password       : "",
     database       : "demobot",
-    connectionLimit: 10
+    connectionLimit: 10,
+    skiptzfix      : true
 });
 
-//Testing pool connection
-pool.getConnection(function(err, connection){
-    if(err) throw err;
-
+//Testing connection
+testConnection();
+async function testConnection(){
     const sql = "SELECT 1 FROM DUAL";
 
-    connection.query(sql, function(error){
+    const result = await db.query(sql);
 
-        console.log("-- Database Connected --");
+    if(result.length >= 1) console.log("-- Database connected --");
+}
 
-        connection.release();
-
-        if(error) throw error;
-    });
+module.exports = Object.freeze({
+    db: db
 });
