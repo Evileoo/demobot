@@ -1,0 +1,16 @@
+Branch:
+    command to activate reports:
+        [+] works
+        
+        [ ] fix the warning `// No command matching undefined was found.`
+
+    report command:
+        [+] works
+
+        security:
+            [ ] block self-reports
+            [ ] add a black list for abusive usage
+
+        functionnality:
+            [ ] Add interaction buttons
+            [ ] Check if the report hasn't been already made -> update instead of create
